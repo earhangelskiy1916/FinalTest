@@ -34,6 +34,22 @@ int Count(string[] stringArray)
     return count;
 }
 
+string[] CreateNewArray(string[] fullArray, int size)
+{
+    int arraySize = size;
+    string[] newArray = new string[size];
+    int index = 0;
+    for (int k = 0; k < fullArray.Length; k++)
+    {
+        if (fullArray[k].Length <= 3)
+        {
+            newArray[index] = fullArray[k];
+            index++;
+        }
+    }
+    return newArray;
+}
+
 
 Console.WriteLine("Enter array length ");
 int array_length = int.Parse(Console.ReadLine()!);
@@ -42,3 +58,6 @@ string[] stringArray = Fillarray(array);
 PrintArray(stringArray);
 Console.WriteLine();
 int count = Count(stringArray);
+Console.WriteLine();
+string[] desiredArray = CreateNewArray(stringArray, count);
+PrintArray(desiredArray);
