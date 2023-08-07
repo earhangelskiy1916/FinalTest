@@ -19,9 +19,26 @@ void PrintArray(string[] stringArray)
     }
 }
 
+int Count(string[] stringArray)
+{
+    int stringArrayLength = stringArray.Length;
+    int count = 0;
+
+    for (int m = 0; m < stringArrayLength; m++)
+    {
+        if (stringArray[m].Length <= 3)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
 
 Console.WriteLine("Enter array length ");
 int array_length = int.Parse(Console.ReadLine()!);
 string[] array = new string[array_length];
 string[] stringArray = Fillarray(array);
 PrintArray(stringArray);
+Console.WriteLine();
+int count = Count(stringArray);
