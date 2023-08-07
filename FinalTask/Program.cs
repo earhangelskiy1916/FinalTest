@@ -10,8 +10,18 @@
     return your_array;
 }
 
+void PrintArray(string[] stringArray)
+{
+    int arrayLength = stringArray.Length;
+    for (int j = 0; j < arrayLength; j++)
+    {
+        Console.Write(stringArray[j] + " ");
+    }
+}
+
 
 Console.WriteLine("Enter array length ");
 int array_length = int.Parse(Console.ReadLine()!);
 string[] array = new string[array_length];
 string[] stringArray = Fillarray(array);
+PrintArray(stringArray);
